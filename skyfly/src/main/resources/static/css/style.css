@@ -1,0 +1,12 @@
+.background {
+    background: linear-gradient(to right, #3494e6, #ec6ead);
+    color: snow;
+}
+h1 {
+    font-size: 3em;
+}
+
+.fa-paper-plane {
+    margin-right: 5px;
+    font-size: 25px;
+}
