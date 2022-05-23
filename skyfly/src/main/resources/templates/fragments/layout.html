@@ -34,3 +34,40 @@
     </div>
 </nav>
 
+<!-- Main page form-->
+<div th:fragment="form(rootPath)" class="container shadow rounded-3 py-2">
+    <h5>Select place:</h5>
+    <div class="d-flex flex-column">
+        <select class="form-select w-50 m-2" aria-label="Default select example">
+            <option selected>Origin</option>
+            <option value="1">Vilnius</option>
+            <option value="2">Kaunas</option>
+            <option value="3">Klaipėda-Palanga</option>
+        </select>
+        <select class="form-select w-50 m-2" aria-label="Default select example">
+            <option selected>Destination</option>
+            <option value="1">London</option>
+            <option value="2">New Work</option>
+            <option value="3">Tokyo</option>
+        </select>
+    </div>
+    <h5>Select date:</h5>
+    <div class="row flex-column">
+        <div class="col-lg-3 col-sm-4 m-2">
+            <label for="startDate">Departure</label>
+            <input id="startDate" class="form-control" type="date" />
+            <span id="startDateSelected"></span>
+        </div>
+        <div class="col-lg-3 col-sm-4 m-2">
+            <label for="endDate">Return</label>
+            <input id="endDate" class="form-control" type="date" />
+            <span id="endDateSelected"></span>
+        </div>
+    </div>
+    <button class="btn btn-dark m-2" type="submit">Search</button>
+</div>
+
+<!--Footer-->
+<div class="fixed-bottom footer" th:fragment="footer">
+    <span>©SkyFly. All Rights Reserved. 2022©</span>
+</div>

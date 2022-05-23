@@ -10,3 +10,16 @@ h1 {
     margin-right: 5px;
     font-size: 25px;
 }
+
+.footer {
+    background: #212529;
+    color: #c6c5c5;
+    padding: 20px;
+    text-align: center;
+}
+
+.mainPlane {
+    display: flex;
+    height: 150px;
+    width: 150px;
+}
