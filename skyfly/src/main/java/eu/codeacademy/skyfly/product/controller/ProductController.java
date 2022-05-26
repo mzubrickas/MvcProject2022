@@ -11,4 +11,9 @@ public class ProductController {
         return "register/register";
     }
 
+    @GetMapping("/flights")
+    public String flight() {
+        return "flights/flights";
+    }
+
 }
