@@ -7,11 +7,14 @@
 
 <div th:replace="fragments/layout :: navbar(rootPath='')"></div>
 
-<div class="d-flex justify-content-center">
-        <h1>Welcome to Sky Fly!</h1>
-</div>
-<div th:replace="fragments/layout :: form(rootPath='')"></div>
-<img class="mainPlane" th:src="@{/images/paper-plane.png}" alt="paper-plane">
+<section>
+        <div class="d-flex justify-content-center">
+                <h1>Welcome to Sky Fly!</h1>
+        </div>
+        <div th:replace="fragments/layout :: form(rootPath='')"></div>
+        <img class="mainPlane" th:src="@{/images/paper-plane.png}" alt="paper-plane">
+</section>
+
 <div th:replace="fragments/layout :: footer"></div>
 
 
