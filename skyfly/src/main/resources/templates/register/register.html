@@ -11,7 +11,7 @@
   <div class="d-flex justify-content-center">
     <h1>Register Form</h1>
   </div>
-  <form class="register row g-3 needs-validation" novalidate>
+  <form class="register row g-3 needs-validation" validate>
     <div class="col-md-3">
       <label for="validationCustom01" class="form-label">First name</label>
       <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
@@ -27,37 +27,38 @@
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustomUsername" class="form-label">Username</label>
-      <div class="input-group has-validation">
-        <span class="input-group-text" id="inputGroupPrepend">@</span>
-        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-          Please choose a username.
-        </div>
+      <label for="validationCustom03" class="form-label">Birth Date</label>
+      <input type="text" class="form-control" id="validationCustom03" value="" required>
+      <div class="valid-feedback">
+        Looks good!
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom03" class="form-label">City</label>
-      <input type="text" class="form-control" id="validationCustom03" required>
+      <label for="validationCustom04" class="form-label">Phone Number</label>
+      <input type="text" class="form-control" id="validationCustom04" required>
       <div class="invalid-feedback">
         Please provide a valid city.
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom04" class="form-label">State</label>
-      <select class="form-select" id="validationCustom04" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
-      </select>
+      <label for="validationCustom05" class="form-label">Email</label>
+      <input type="text" class="form-control" id="validationCustom05" required>
       <div class="invalid-feedback">
-        Please select a valid state.
+        Please provide a valid city.
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom05" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="validationCustom05" required>
+      <label for="validationCustom06" class="form-label">Password</label>
+      <input type="text" class="form-control" id="validationCustom06" required>
       <div class="invalid-feedback">
-        Please provide a valid zip.
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom07" class="form-label">Nationality</label>
+      <input type="text" class="form-control" id="validationCustom07" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
       </div>
     </div>
     <div class="col-3">
@@ -76,10 +77,6 @@
     </div>
   </form>
 </section>
-
-<!--<div th:replace="fragments/layout :: form(rootPath='')"></div>-->
-
-<!--<img class="mainPlane d-flex justify-content-center" th:src="@{/images/paper-plane.png}" alt="paper-plane">-->
 
 <div th:replace="fragments/layout :: footer"></div>
 

@@ -40,9 +40,9 @@
                        th:text="#{lang.option}">
                     </a>
                     <ul class="dropdown-menu navbar-default" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" th:href="'/' + *{rootPath} + '?lang=lt'">Lithuanian</a></li>
-                        <li><a class="dropdown-item" th:href="'/' + *{rootPath} + '?lang=en'">English</a></li>
-                        <li><a class="dropdown-item" th:href="'/' + *{rootPath} + '?lang=es'">Spanish</a></li>
+                        <li><a class="dropdown-item" th:href="'/' + *{rootPath} + '?lang=lt'" th:text="#{layout.lithunanian}">Lithuanian</a></li>
+                        <li><a class="dropdown-item" th:href="'/' + *{rootPath} + '?lang=en'" th:text="#{layout.english}">English</a></li>
+                        <li><a class="dropdown-item" th:href="'/' + *{rootPath} + '?lang=es'" th:text="#{layout.spanish}">Spanish</a></li>
                     </ul>
                 </div>
             </div>
@@ -82,6 +82,137 @@
     </div>
     <button class="btn btn-dark m-2" type="submit" th:text="#{layout.button.search}"></button>
 </div>
+
+<!--Flight form-->
+<section th:fragment="flightform(rootPath)">
+    <div class="d-flex justify-content-center">
+        <h1 th:text="#{flight.title}">!</h1>
+    </div>
+    <div class="origin-destination">
+        <div class="mb-2 col-4">
+            <label id="origin-label" for="origin-input" class="form-label" th:text="#{flight.origin}"></label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-plane-departure"></i></span>
+                <input
+                        type="text"
+                        class="form-control"
+                        list="origin-options"
+                        id="origin-input"
+                        th:placeholder="#{flight.placeholder.departure}"
+                        aria-describedby="origin-label"/>
+                <datalist id="origin-options"></datalist>
+            </div>
+        </div>
+        <div class="col-4">
+            <label id="destination-label" for="destination-input" class="form-label" th:text="#{flight.destination}"></label>
+            <div class="input-group ">
+                <span class="input-group-text"><i class="fa-solid fa-plane-arrival"></i></span>
+                <input
+                        type="text"
+                        class="form-control"
+                        list="destination-options"
+                        id="destination-input"
+                        th:placeholder="#{flight.placeholder.destination}"
+                        aria-describedby="destination-label"
+                />
+                <datalist id="destination-options"></datalist>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-2">
+                <label id="flight-type-label" for="flight-type-select" class="form-label" th:text="#{flight.flight}"></label>
+                <select
+                        id="flight-type-select"
+                        class="form-select"
+                        aria-describedby="flight-type-label"
+                >
+                    <option value="one-way" th:text="#{flight.one.way}"></option>
+                    <option value="round-trip" th:text="#{flight.round.trip}"></option>
+                </select>
+            </div>
+            <div class="mb-2"></div>
+            <div class="mb-2"></div>
+        </div>
+        <div class="mb-2 col-4">
+            <label id="departure-date-label" for="departure-date-input" class="form-label" th:text="#{flight.departure}"></label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-play"></i></span>
+                <input
+                        type="date"
+                        class="form-control"
+                        id="departure-date-input"
+                        aria-describedby="departure-date-label"
+                />
+            </div>
+        </div>
+        <div id="return-date" class="mb-2 col-4">
+            <label id="return-date-label" for="return-date-input" class="form-label" th:text="#{flight.return}"></label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-stop"></i></span>
+                <input
+                        type="date"
+                        class="form-control"
+                        id="return-date-input"
+                        aria-describedby="return-date-label"/>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-2">
+                <label id="travel-class-label" for="travel-class-select" class="form-label" th:text="#{flight.travel.class}"></label>
+                <select
+                        class="form-select"
+                        id="travel-class-select"
+                        aria-describedby="travel-class-label">
+                    <option value="ECONOMY" th:text="#{flight.economy}">Economy</option>
+                    <option value="PREMIUM_ECONOMY" th:text="#{flight.premium.economy}"></option>
+                    <option value="BUSINESS" th:text="#{flight.business}"></option>
+                    <option value="FIRST" th:text="#{flight.first}"></option>
+                </select>
+            </div>
+            <label class="form-label" th:text="#{flight.passengers}"></label>
+            <div class="mb-2"></div>
+            <div class="mb-2"></div>
+            <div class="mb-2"></div>
+        </div>
+        <div class="mb-2 col-4">
+            <div class="input-group">
+                <label for="adults-input" class="input-group-text" th:text="#{flight.adult}"></label>
+                <input
+                        type="number"
+                        min="0"
+                        class="form-control"
+                        id="adults-input"
+                        aria-describedby="adults-label"/>
+            </div>
+            <span id="adults-label" class="form-text age-group" th:text="#{flight.twelve.plus}"></span>
+        </div>
+        <div class="mb-2 col-4">
+            <div class="input-group">
+                <label for="children-input" class="input-group-text" th:text="#{flight.children}"></label>
+                <input
+                        type="number"
+                        min="0"
+                        class="form-control"
+                        id="children-input"
+                        aria-describedby="children-label"/>
+            </div>
+            <span id="children-label" class="form-text age-group" th:text="#{flight.two.to.twelve}"></span>
+        </div>
+        <div class="mb-2 col-4">
+            <div class="input-group">
+                <label for="infants-input" class="input-group-text" th:text="#{flight.infants}"></label>
+                <input
+                        type="number"
+                        min="0"
+                        class="form-control"
+                        id="infants-input"
+                        aria-describedby="infants-label"/>
+            </div>
+            <span id="infants-label" class="form-text age-group" th:text="#{flight.to.two}"></span>
+        </div>
+        <button id="search-button" class="btn btn-dark m-2" th:text="#{flight.search}">Search</button>
+    </div>
+</section>
 
 <!--Footer-->
 <div class="footer" th:fragment="footer">
