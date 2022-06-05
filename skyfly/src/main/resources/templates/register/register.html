@@ -9,53 +9,53 @@
 
 <section>
   <div class="d-flex justify-content-center">
-    <h1>Register Form</h1>
+    <h1 th:text="#{register.title}"></h1>
   </div>
   <form class="register row g-3 needs-validation" validate>
     <div class="col-md-3">
-      <label for="validationCustom01" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+      <label for="validationCustom01" class="form-label" th:text="#{register.name}"></label>
+      <input type="text" class="form-control" id="validationCustom01" value="" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom02" class="form-label">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+      <label for="validationCustom02" class="form-label" th:text="#{register.surname}"></label>
+      <input type="text" class="form-control" id="validationCustom02" value="" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom03" class="form-label">Birth Date</label>
+      <label for="validationCustom03" class="form-label" th:text="#{register.birthday}"></label>
       <input type="text" class="form-control" id="validationCustom03" value="" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom04" class="form-label">Phone Number</label>
+      <label for="validationCustom04" class="form-label" th:text="#{register.phone}"></label>
       <input type="text" class="form-control" id="validationCustom04" required>
       <div class="invalid-feedback">
         Please provide a valid city.
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom05" class="form-label">Email</label>
+      <label for="validationCustom05" class="form-label" th:text="#{register.email}"></label>
       <input type="text" class="form-control" id="validationCustom05" required>
       <div class="invalid-feedback">
         Please provide a valid city.
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom06" class="form-label">Password</label>
+      <label for="validationCustom06" class="form-label" th:text="#{register.password}"></label>
       <input type="text" class="form-control" id="validationCustom06" required>
       <div class="invalid-feedback">
         Please provide a valid city.
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom07" class="form-label">Nationality</label>
+      <label for="validationCustom07" class="form-label" th:text="#{register.nationality}"></label>
       <input type="text" class="form-control" id="validationCustom07" required>
       <div class="invalid-feedback">
         Please provide a valid city.
@@ -64,8 +64,7 @@
     <div class="col-3">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-        <label class="form-check-label" for="invalidCheck">
-          Agree to terms and conditions
+        <label class="form-check-label" for="invalidCheck" th:text="#{register.terms.conditions}">
         </label>
         <div class="invalid-feedback">
           You must agree before submitting.
@@ -73,7 +72,7 @@
       </div>
     </div>
     <div class="col-3">
-      <button class="btn btn-dark m-2" type="submit">Submit</button>
+      <button class="btn btn-dark m-2" type="submit" th:text="#{register.submit}"></button>
     </div>
   </form>
 </section>
