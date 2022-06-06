@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head th:replace="fragments/layout :: head(#{welcome.title})"></head>
+
+<body class="background">
+
+<div th:replace="fragments/layout :: navbar(rootPath='')"></div>
+
+
+<section>
+    <table class="table navbar-default ">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td><button type="button" class="btn btn-danger">Danger</button></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td><button type="button" class="btn btn-danger">Danger</button></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+
+<div th:replace="fragments/layout :: footer"></div>
+
+
+</body>
+</html>

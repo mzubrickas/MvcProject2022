@@ -16,4 +16,9 @@ public class ProductController {
         return "flights/flights";
     }
 
+    @GetMapping("/addflights")
+    public String addflight() {
+        return "addflights/addflights";
+    }
+
 }
