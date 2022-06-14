@@ -8,34 +8,38 @@
 <div th:replace="fragments/layout :: navbar(rootPath='')"></div>
 
 
+
 <section>
+    <div th:if="${productList.isEmpty}">Product list is empty</div>
+    <div th:unless="${productList.isEmpty}">
     <table class="table navbar-default ">
         <thead>
         <tr>
-            <th scope="col" >#</th>
-            <th scope="col" >First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-            <th scope="col"></th>
+            <th scope="col" >Origin</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Departure Date</th>
+            <th scope="col">Return Date</th>
+            <th scope="col">Travel Class</th>
+            <th scope="col">Adults</th>
+            <th scope="col">Childre</th>
+            <th scope="col">Infants</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td><button type="button" class="btn btn-danger">Danger</button></td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+        <tr th:each="product: ${productList}">
+            <td th:text="${product.origin}"></td>
+            <td th:text="${product.destination}"></td>
+            <td th:text="${product.departureDate}"></td>
+            <td th:text="${product.returnDate}"></td>
+            <td th:text="${product.travelClass}"></td>
+            <td th:text="${product.adults}"></td>
+            <td th:text="${product.children}"></td>
+            <td th:text="${product.infants}"></td>
             <td><button type="button" class="btn btn-danger">Danger</button></td>
         </tr>
         </tbody>
     </table>
+    </div>
 </section>
 
 

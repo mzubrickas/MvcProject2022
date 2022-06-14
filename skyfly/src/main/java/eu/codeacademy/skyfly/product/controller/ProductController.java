@@ -1,5 +1,6 @@
 package eu.codeacademy.skyfly.product.controller;
 import eu.codeacademy.skyfly.product.dto.ProductDto;
+import eu.codeacademy.skyfly.product.entity.Product;
 import eu.codeacademy.skyfly.product.helper.MessageService;
 import eu.codeacademy.skyfly.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -31,31 +32,30 @@ public class ProductController {
 //        return "flights/flights";
 //    }
 
-    @GetMapping("/search")
-    public String search() {
-        return "search/search";
-    }
+//    @GetMapping("/search")
+//    public String search() {
+//        return "search/search";
+//    }
 
     @GetMapping("/flights")
-    public String openCrateProductForm(Model model, String message) {
-        model.addAttribute("product", ProductDto.builder().build());
-        model.addAttribute("message", messageService.getMessage(message));
+    public String openCrateProductForm(Model model) {
+        model.addAttribute("product", Product.builder().build());
+
         return "flights/flights";
     }
 
     @PostMapping
     public String createProduct(Model model, ProductDto product) {
         productService.addProduct(product);
-        model.addAttribute("product", ProductDto.builder().build());
+        model.addAttribute("message", "Product added successfully!");
         return "flights/flights";
     }
 
-//    @GetMapping("/search")
-//    public String getProducts(
-//            Model model, @PageableDefault(size = 7, sort = {"name"}, direction = Sort.Direction.ASC) Pageable pageable) {
-//        model.addAttribute("productsPage", productService.getProductPaginated(pageable));
-//
-//        return "";
-//    }
+    @GetMapping("/search")
+    public String getProducts(Model model) {
+        model.addAttribute("productList", productService.getProducts());
+
+        return "search/search";
+    }
 
 }
